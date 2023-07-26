@@ -1,35 +1,68 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import React, { useState } from 'react';
+// import useConfetti from './hooks/useConfetti';
+// import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+// function App() {
+//   const [bestTime, setBestTime] = useState(false);
+//   const [bestDiceRoll, setBestDiceRoll] = useState(false);
+//   const { confetti, newBestTime, newBestDiceRoll, newBestGame } = useConfetti({ bestTime, setBestTime, bestDiceRoll, setBestDiceRoll });
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+//   return (
+//     <section className="confetti">
+//     {!bestTime && !bestDiceRoll && <h1>Choose a React state, and click celebrate!</h1>} 
 
-export default App
+//     {bestTime && bestDiceRoll ? (
+//     <h1>🏆New Best Game!🏆</h1>
+//     ) : bestDiceRoll ? (
+//     <h1>🎲New Best Dice Roll!🎲</h1>
+//     ) : bestTime ? (
+//     <h1>⏱New Best Time!⏱</h1>
+// ) : null}
+
+//       <div>
+//         <button onClick={newBestTime}>newBestTime</button>
+//         <button onClick={newBestDiceRoll}>newBestDiceRoll</button>
+//         <button onClick={newBestGame}>newBestGame</button>
+//       </div>
+//         <button onClick={confetti}>Celebrate!</button>
+//     </section>
+//   );
+// };
+
+// export default App;
+
+
+// BestLowDiceRoll
+// import { useState } from 'react'
+// import BestLowDiceRoll from '../src/components/BestLowDiceRoll';
+// import './App.css'
+
+// function App() {
+//   const [gameStarted, setGameStarted] = useState(false);
+//   const [gameEnded, setGameEnded] = useState(false);
+
+//   return (
+//       <BestLowDiceRoll 
+//         gameStarted={gameStarted}
+//         gameEnded={gameEnded}
+//         setGameStarted={setGameStarted}
+//         setGameEnded={setGameEnded}
+//       />
+//   )
+// }
+
+// export default App
+
+//BestTime.jsx
+// import BestTime from "./components/BestTime";
+// import "./App.css";
+
+// function App() {
+// 	return (
+// 		<div className="App">
+// 			<BestTime />
+// 		</div>
+// 	);
+// }
+
+// export default App;
