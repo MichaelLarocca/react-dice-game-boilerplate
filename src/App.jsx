@@ -89,6 +89,17 @@ function App() {
   const [gameStarted, setGameStarted] = useState(false);
   const [gameEnded, setGameEnded] = useState(false);
 
+// This App
+  const [mainAppGameStart, setMainAppGameStart] = useState(false);
+  const [mainAppGameEnd, setMainAppGameEnd] = useState(false);
+  const [mainAppDice, setMainAppDice]= useState(0);
+
+
+  function mainAppDiceRoll() {
+    setMainAppDice(prev => prev + 1);
+      console.log(`mainAppDice: ${mainAppDice}`)
+  }
+
   return (
     <section className="confetti">
     {/* {!bestTime && !bestDiceRoll && <h1>Choose a React state, and click celebrate!</h1>}  */}
@@ -111,6 +122,8 @@ function App() {
           gameEnded={gameEnded}
           setGameStarted={setGameStarted}
           setGameEnded={setGameEnded}
+          mainAppDiceRoll={mainAppDiceRoll}
+          mainAppDice={mainAppDice}
         />
     </nav>
 
@@ -120,6 +133,10 @@ function App() {
         <button onClick={newBestGame}>newBestGame</button>
       </div> */}
         {/* <button onClick={confetti}>Celebrate!</button> */}
+
+
+     {/*  This App */}
+     <button onClick={mainAppDiceRoll}>Roll Dice</button>   
     </section>
   );
 };

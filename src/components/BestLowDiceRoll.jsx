@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 
-function BestLowDiceRoll({ gameStarted, gameEnded, setGameStarted, setGameEnded }) {
+// function BestLowDiceRoll({ gameStarted, gameEnded, setGameStarted, setGameEnded }) {
+    function BestLowDiceRoll({ gameStarted, gameEnded, setGameStarted, setGameEnded, mainAppDiceRoll, mainAppDice }) {
+
     const [currentDiceRoll, setCurrentDiceRoll] = useState(0);
     const [gameEndDiceRoll, setGameEndDiceRoll] = useState(0)
     const [gameBestDiceRoll, setGameBestDiceRoll] = useState(0);
@@ -10,9 +12,12 @@ function BestLowDiceRoll({ gameStarted, gameEnded, setGameStarted, setGameEnded 
         setCurrentDiceRoll(0);
     }
     
+    // function rollDiceCounter() {
+    //     setCurrentDiceRoll(prev => prev + 1);
+    // }
     function rollDiceCounter() {
-        setCurrentDiceRoll(prev => prev + 1);
-    }
+        mainAppDiceRoll(); // Replace this line
+      }
 
     function getBestDiceRoll() {
       const storedBestDiceRoll = localStorage.getItem(`${yourAwesomeGameName}-BestDiceRoll`);
@@ -66,7 +71,8 @@ function BestLowDiceRoll({ gameStarted, gameEnded, setGameStarted, setGameEnded 
       <>
       <section className="best-low-dice-roll">
         <div className="best-low-dice-roll-inner-border">
-          <div>Dice Rolls: {currentDiceRoll}</div> 
+          {/* <div>Dice Rolls: {currentDiceRoll}</div>  */}
+          <div>Dice Rolls: {mainAppDice}</div> {/* Update this line */}
         </div>
         <div className="best-low-dice-roll-inner-border">
           <div>Best Rolls: {gameBestDiceRoll === Infinity ? '---' : gameBestDiceRoll}</div>
