@@ -73,7 +73,7 @@ function BestLowDiceRoll({ gameStarted, gameEnded, setGameStarted, setGameEnded 
         </div>
       </section>
 
-      <button onClick={startGame} disabled={gameStarted}>
+      {/* <button onClick={startGame} disabled={gameStarted}>
         Start
       </button>
       <button onClick={rollDiceCounter} disabled={!gameStarted || gameEnded}>
@@ -81,7 +81,7 @@ function BestLowDiceRoll({ gameStarted, gameEnded, setGameStarted, setGameEnded 
       </button>
       <button onClick={endGame} disabled={!gameStarted || gameEnded}>
         End
-      </button>
+      </button> */}
     </>
     )
   }
