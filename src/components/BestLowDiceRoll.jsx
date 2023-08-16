@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 
-// function BestLowDiceRoll({ gameStarted, gameEnded, setGameStarted, setGameEnded }) {
-    function BestLowDiceRoll({ gameStarted, gameEnded, setGameStarted, setGameEnded, mainAppDiceRoll, mainAppDice }) {
-
+function BestLowDiceRoll({ gameStarted, gameEnded, setGameStarted, setGameEnded }) {
     const [currentDiceRoll, setCurrentDiceRoll] = useState(0);
     const [gameEndDiceRoll, setGameEndDiceRoll] = useState(0)
     const [gameBestDiceRoll, setGameBestDiceRoll] = useState(0);
@@ -12,12 +10,9 @@ import { useState, useEffect } from "react";
         setCurrentDiceRoll(0);
     }
     
-    // function rollDiceCounter() {
-    //     setCurrentDiceRoll(prev => prev + 1);
-    // }
     function rollDiceCounter() {
-        mainAppDiceRoll(); // Replace this line
-      }
+        setCurrentDiceRoll(prev => prev + 1);
+    }
 
     function getBestDiceRoll() {
       const storedBestDiceRoll = localStorage.getItem(`${yourAwesomeGameName}-BestDiceRoll`);
@@ -71,15 +66,14 @@ import { useState, useEffect } from "react";
       <>
       <section className="best-low-dice-roll">
         <div className="best-low-dice-roll-inner-border">
-          {/* <div>Dice Rolls: {currentDiceRoll}</div>  */}
-          <div>Dice Rolls: {mainAppDice}</div> {/* Update this line */}
+          <div>Dice Rolls: {currentDiceRoll}</div> 
         </div>
         <div className="best-low-dice-roll-inner-border">
           <div>Best Rolls: {gameBestDiceRoll === Infinity ? '---' : gameBestDiceRoll}</div>
         </div>
       </section>
 
-      {/* <button onClick={startGame} disabled={gameStarted}>
+      <button onClick={startGame} disabled={gameStarted}>
         Start
       </button>
       <button onClick={rollDiceCounter} disabled={!gameStarted || gameEnded}>
@@ -87,7 +81,7 @@ import { useState, useEffect } from "react";
       </button>
       <button onClick={endGame} disabled={!gameStarted || gameEnded}>
         End
-      </button> */}
+      </button>
     </>
     )
   }
