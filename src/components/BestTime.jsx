@@ -99,10 +99,10 @@ export default function BestTime() {
 					<div>Best Time: {formattedTime(gameBestTime)}</div>
 				</div>
 			</section>
-			{/* <button onClick={startGame} disabled={gameStarted}>
+			<button onClick={startGame} disabled={gameStarted}>
 				Start Game
 			</button>
-			<button onClick={endGame}>End Game</button> */}
+			<button onClick={endGame}>End Game</button>
 		</>
 	);
 }
